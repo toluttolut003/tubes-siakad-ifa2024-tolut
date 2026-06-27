@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class UserAccess
@@ -14,9 +13,9 @@ class UserAccess
      *
      * @param  Closure(Request): (Response)  $next
      */
-    public function handle(Request $request, Closure $next, $userType): Response
+    public function handle(Request $request, Closure $next, $userRole): Response
     {
-        if(Auth::user()->role == $userType){
+        if(auth()->user()->role == $userRole){
             return $next($request);
             } else {
                 abort(403, 'Unauthorized');

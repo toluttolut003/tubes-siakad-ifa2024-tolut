@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class dosen extends Model
 {
@@ -19,10 +19,18 @@ class dosen extends Model
         'updated_at'
     ];
 
-    // public function mahasiswa(): BelongsTo 
-    // {
-    //     return $this->belongsTo(Mahasiswa::class, 'nidn', 'nidn');
-    // }
+    public function mahasiswa(): HasMany 
+    {
+        return $this->HasMany(Mahasiswa::class, 'nidn', 'nidn');
+    }
+
+    public function jadwal(): HasMany 
+    {
+        return $this->HasMany(Jadwal::class, 'nidn', 'nidn');
+    }
+
+
+    // i still dont understand if this function supposed to be put in here too braahhh
 
     // public function jadwal(): BelongsTo
     // {
