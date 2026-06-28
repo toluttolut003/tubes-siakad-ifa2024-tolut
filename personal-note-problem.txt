@@ -1,0 +1,12 @@
+--NOTE--
+Admin Kelola semua data
+Mahasiswa hanya lihat jadwal dan ambil KRS
+
+--PROBLEM ENCOUNTER FIX--
+everytime theres POST METHOD CANT BE USE
+use -> php artisan route:clear.
+
+the nidn problem where it say no default value, i simply move it to fillable.
+
+declaring primary key in the model may cause the display pk turn into 0 if contain any
+alphabetical character.

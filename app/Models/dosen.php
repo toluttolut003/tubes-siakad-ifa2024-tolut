@@ -10,11 +10,11 @@ class dosen extends Model
     protected $table = 'dosen';
 
     protected $fillable = [
-        'nama'
+        'nama',
+        'nidn'
     ];
 
     protected $guarded = [
-        'nidn',
         'created_at',
         'updated_at'
     ];
