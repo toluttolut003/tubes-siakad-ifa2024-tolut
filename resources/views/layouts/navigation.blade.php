@@ -31,6 +31,14 @@
                         {{ __('Mahasiswa') }}
                     </x-nav-link>
                 </div>
+
+                <!-- Matakuliah -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('matakuliah.index')" :active="request()->routeIs('matakuliah.index')">
+                        {{ __('Matakuliah') }}
+                    </x-nav-link>
+                </div>
+
                 @endif
                 
             </div>

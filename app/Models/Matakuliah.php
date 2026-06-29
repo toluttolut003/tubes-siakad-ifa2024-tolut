@@ -8,15 +8,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Matakuliah extends Model
 {
     protected $table='matakuliah';
-    protected $primaryKey = 'kode_matakuliah';
     
     protected $fillable = [
         'sks',
-        'nama_matakuliah'
+        'nama_matakuliah',
+        'kode_matakuliah',
     ];
 
     protected $guarded = [
-        'kode_matakuliah',
         'created_at',
         'updated_at'
     ];

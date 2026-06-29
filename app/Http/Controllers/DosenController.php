@@ -28,7 +28,7 @@ class DosenController extends Controller
             'nama.required' => 'Nama tidak boleh kosong',
         ]);
 
-        dosen::create($validated);
+        dosen::create(${validated});
 
         if($request->save == true){
             return redirect()->route('dosen.index');

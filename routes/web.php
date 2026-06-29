@@ -3,6 +3,7 @@
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Mahasiswa;
 use App\Models\User;
@@ -43,6 +44,17 @@ Route::middleware('auth', 'admin')->group(function(){
     Route::get('/mahasiswa/edit/{id}', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit');
     Route::patch('/mahasiswa/update/{id}', [MahasiswaController::class, 'update'])->name('mahasiswa.update');
     Route::delete('/mahasiswa/delete/{id}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
+    
+    });
+
+    //  MAHASISWA
+Route::middleware('auth', 'admin')->group(function(){
+    Route::get('/matakuliah/index', [MatakuliahController::class, 'index'])->name('matakuliah.index');
+    Route::get('/matakuliah/create', [MatakuliahController::class, 'create'])->name('matakuliah.create');
+    Route::post('/matakuliah/store', [MatakuliahController::class, 'store'])->name('matakuliah.store');
+    Route::get('/matakuliah/edit/{id}', [MatakuliahController::class, 'edit'])->name('matakuliah.edit');
+    Route::patch('/matakuliah/update/{id}', [MatakuliahController::class, 'update'])->name('matakuliah.update');
+    Route::delete('/matakuliah/delete/{id}', [MatakuliahController::class, 'destroy'])->name('matakuliah.destroy');
     
     });
 
