@@ -38,8 +38,22 @@
                         {{ __('Matakuliah') }}
                     </x-nav-link>
                 </div>
-
+                
                 @endif
+
+                <!-- Mahasiswa -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('jadwal.index')" :active="request()->routeIs('jadwal.index')">
+                        {{ __('Jadwal') }}
+                    </x-nav-link>
+                </div>
+
+                <!-- Mahasiswa -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('krs.index')" :active="request()->routeIs('krs.index')">
+                        {{ __('KRS') }}
+                    </x-nav-link>
+                </div>
                 
             </div>
 

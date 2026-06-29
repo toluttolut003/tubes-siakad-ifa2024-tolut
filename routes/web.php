@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\KrsController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\ProfileController;
@@ -21,6 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/jadwal/index', [JadwalController::class, 'index'])->name('jadwal.index');
+    Route::get('/krs/index', [KrsController::class, 'index'])->name('krs.index');
 });
 
 require __DIR__.'/auth.php';
@@ -47,7 +51,7 @@ Route::middleware('auth', 'admin')->group(function(){
     
     });
 
-    //  MAHASISWA
+    //  matakuliah
 Route::middleware('auth', 'admin')->group(function(){
     Route::get('/matakuliah/index', [MatakuliahController::class, 'index'])->name('matakuliah.index');
     Route::get('/matakuliah/create', [MatakuliahController::class, 'create'])->name('matakuliah.create');
@@ -55,11 +59,26 @@ Route::middleware('auth', 'admin')->group(function(){
     Route::get('/matakuliah/edit/{id}', [MatakuliahController::class, 'edit'])->name('matakuliah.edit');
     Route::patch('/matakuliah/update/{id}', [MatakuliahController::class, 'update'])->name('matakuliah.update');
     Route::delete('/matakuliah/delete/{id}', [MatakuliahController::class, 'destroy'])->name('matakuliah.destroy');
-    
+    });
+
+Route::middleware('auth', 'admin')->group(function(){
+    Route::get('/jadwal/create', [JadwalController::class, 'create'])->name('jadwal.create');
+    Route::post('/jadwal/store', [JadwalController::class, 'store'])->name('jadwal.store');
+    Route::get('/jadwal/edit/{id}', [JadwalController::class, 'edit'])->name('jadwal.edit');
+    Route::patch('/jadwal/update/{id}', [JadwalController::class, 'update'])->name('jadwal.update');
+    Route::delete('/jadwal/delete/{id}', [JadwalController::class, 'destroy'])->name('jadwal.destroy');
+    });
+
+    Route::middleware('auth', 'admin')->group(function(){
+    Route::get('/krs/create', [KrsController::class, 'create'])->name('krs.create');
+    Route::post('/krs/store', [KrsController::class, 'store'])->name('krs.store');
+    Route::get('/krs/edit/{id}', [KrsController::class, 'edit'])->name('krs.edit');
+    Route::patch('/krs/update/{id}', [KrsController::class, 'update'])->name('krs.update');
+    Route::delete('/krs/delete/{id}', [KrsController::class, 'destroy'])->name('krs.destroy');
     });
 
     //LOOK FOR ANY TYPO
-    //DECARE THE PRIMARY KEY ON THE MODEL IF YOU STRUGGLE WITH PRIMARY (NEVERMIND, READ THE NOTE personal-note-problem.txt first)
+    //DECARE THE PRIMARY KEY ON THE MODEL IF YOU STRUGGLE WITH PRIMARY (NEVERMIND, READ THE NOTE personal-note-problem.txt FIRST)
 
 Route::middleware('auth')->group(function(){
     //
