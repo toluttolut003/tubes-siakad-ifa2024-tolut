@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Jadwal extends Model
@@ -24,13 +25,13 @@ class Jadwal extends Model
         'updated_at'
     ];
 
-    public function dosen(): HasOne
+    public function dosen(): BelongsTo
     {
-        return $this->hasOne(dosen::class, 'nidn', 'nidn');
+        return $this->belongsTo(dosen::class, 'nidn', 'nidn');
     } 
 
-    public function matakuliah(): HasOne
+    public function matakuliah(): BelongsTo
     {
-        return $this->hasOne(Matakuliah::class, 'kode_matakuliah', 'kode_matakuliah');
+        return $this->belongsTo(Matakuliah::class, 'kode_matakuliah', 'kode_matakuliah');
     }
 }

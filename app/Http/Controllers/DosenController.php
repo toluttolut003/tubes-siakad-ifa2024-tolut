@@ -40,6 +40,7 @@ class DosenController extends Controller
     //edit
     public function edit(String $id){
         $data['dosen'] = dosen::where('nidn', $id)->firstOrFail();
+        //well well, since were not using id as npm you need to use dis 'where' function yah to retrieve the data yea
         return view('dosen.edit', $data);
     }
     //update

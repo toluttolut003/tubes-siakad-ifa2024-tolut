@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Krs extends Model
@@ -20,13 +21,13 @@ class Krs extends Model
 
     protected $fillable = [];
 
-    public function mahasiswa(): HasOne
+    public function mahasiswa(): BelongsTo
     {
-        return $this->hasOne(Mahasiswa::class, 'npm', 'npm');
+        return $this->belongsTo(Mahasiswa::class, 'npm', 'npm');
     }
 
-    public function matakuliah(): HasOne
+    public function matakuliah(): BelongsTo
     {
-        return $this->hasOne(Matakuliah::class, 'kode_matakuliah', 'kode_matakuliah');
+        return $this->belongsTo(Matakuliah::class, 'kode_matakuliah', 'kode_matakuliah');
     }
 }
