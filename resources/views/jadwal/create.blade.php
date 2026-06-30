@@ -37,10 +37,10 @@
                         <x-input-label for="kelas" value="KELAS"/>
                         <select name="kelas" id="kelas" required>
                             <option value=""></option>
-                            @php $num=1; @endphp
-                            @for ($num = 1; $num <= 4; $num++)
-                                <option value="{{ $num }}">{{ $num }}</option>
-                            @endfor
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
                         </select>
                         <x-input-error class="mt-2" :messages="$errors->get('kelas')" />
                     </div>
@@ -55,7 +55,6 @@
                             <option value="KAMIS">KAMIS</option>
                             <option value="JUMAT">JUMAT</option>
                             <option value="SABTU">SABTU</option>
-                            <option value="MINGGU">MINGGU</option>
                         </select>
                         <x-input-error class="mt-2" :messages="$errors->get('hari')" />
                     </div>

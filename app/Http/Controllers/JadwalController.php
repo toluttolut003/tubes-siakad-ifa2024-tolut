@@ -84,7 +84,7 @@ class JadwalController extends Controller
     public function destroy (String $id){
         $jadwal = Jadwal::where('id', $id)->firstOrFail();
         $jadwal->where('id', $id)->delete();
-        return redirect()->route('Jadwal.index')->with('success', ' berhasil dihapus');
+        return redirect()->route('jadwal.index')->with('success', ' berhasil dihapus');
      }
 }
 

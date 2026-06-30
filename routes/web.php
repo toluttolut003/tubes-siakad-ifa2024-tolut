@@ -9,6 +9,7 @@ use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Mahasiswa;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,15 +17,16 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    if(Auth::user()->role == 'admin'){
+        return view('admin.dashboard');
+    } else {return view('dashboard');}
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'verified')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/jadwal/index', [JadwalController::class, 'index'])->name('jadwal.index');
-    
 });
 
 require __DIR__.'/auth.php';
@@ -71,7 +73,7 @@ Route::middleware('auth', 'admin')->group(function(){
     });
 
 //  KRS
-Route::middleware('auth')->group(function(){
+Route::middleware('auth', 'verified')->group(function(){
     Route::get('/krs/index', [KrsController::class, 'index'])->name('krs.index');
     Route::get('/krs/create', [KrsController::class, 'create'])->name('krs.create');
     Route::post('/krs/store', [KrsController::class, 'store'])->name('krs.store');
