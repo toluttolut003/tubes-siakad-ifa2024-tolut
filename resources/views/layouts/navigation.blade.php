@@ -109,6 +109,31 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('dosen.index')" :active="request()->routeIs('dosen.index')">
+                {{ __('Dosen') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('mahasiswa.index')" :active="request()->routeIs('mahasiswa.index')">
+                {{ __('Mahasiswa') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('matakuliah.index')" :active="request()->routeIs('matakuliah.index')">
+                {{ __('Matakuliah') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('jadwal.index')" :active="request()->routeIs('jadwal.index')">
+                {{ __('Jadwal') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('krs.index')" :active="request()->routeIs('krs.index')">
+                {{ __('KRS') }}
+            </x-responsive-nav-link>
+        </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">

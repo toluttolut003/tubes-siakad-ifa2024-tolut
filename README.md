@@ -1,59 +1,66 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Nama    : Tolut
+NPM     : 5520124031
+Kelas   : IFA24
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# __Sistem Akademik SIAKAD__
+### Deskripsi Singkat
+Aplikasi ini memiliki fungsi sebagai tempat untuk me-menage data rencana studi mahasiswa, mulai dari me-menage matakuliah yang bisa di ambil, dosen yang bisa di assign ke matakuliah, jadwal, juga daftar mahasiswa.
 
-## About Laravel
+Adapun fungsi untuk mahasiswa diantaranya seperti mengambil matakuliah (input KRS), melihat jadwal, juga melihat matakuliah yang diambil.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Akun hanya bisa di buat oleh admin melalui UserSeeder, mahasiswa yang ingin dibuatkan akun harus mempunyai npm yang terdaftar terlebih dahulu pada tab Mahasiswa.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Daftar Page
+#### 1. Login
+pada page ini user bisa menginputkan akun yang terdaftar
+list akun yang terdaftar :
+#### Akun Admin
+NPM: Admin
+Password: Admin123
+#### Akun Mahasiswa
+NPM : 5520124031
+Password : Tolut123
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+NPM :   5520124022
+Password : Ari123
 
-## Learning Laravel
+![](/screenshots/Login.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+#### 2. Dashboard
+halaman utama ketika masuk ke aplikasi, berbeda antar role mahasiswa dan admin
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+![](/screenshots/dashboard.png)
 
-## Laravel Sponsors
+#### 3. dosen
+Di page ini Admin bisa menambahkan dosen baru, mengahapus atau memperbarui dosen yang ada.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+![](/screenshots/dosen.png)
+![](/screenshots/dosen,edit.png)
 
-### Premium Partners
+#### 4. Mahasiswa
+Di page ini Admin bisa menambahkan daftar mahasiswa sebelum akun mereka bisa dibuat, admin juga bisa mengahapus data, tetapi jika mengahpus mahasiswa akan menghapus akun mahasiswa yang terhubung dengan npm yg di hapus.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+![](/screenshots/mahasiswa.png)
+![](/screenshots/mahasiswa.edit.png)
 
-## Contributing
+#### 5. Matakuliah
+Di page ini Admin bisa menambah matakuliah baru beserta jumlah sks nya.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![](/screenshots/matakuliah.png)
+![](/screenshots/matakuliah.edit.png)
 
-## Code of Conduct
+#### 5. Jadwal
+Di page ini Admin bisa menambahkan jadwal, mulai dari jam berapa matakuliah dimulai, siapa dosen nya, kelas apa dan matakuliah apa.
+Mahasiswa bisa melihat bagian page ini
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![](/screenshots/Jadwal.png)
+![](/screenshots/jadwal.create.png)
 
-## Security Vulnerabilities
+#### 5. KRS (fitur utama)
+fungsi krs tergantung role
+jika admin, admin bisa menambahkan krs untuk mahasiswa mana saja yang terdaftar.
+Jika mahasiswa, mahasiswa dapat megambil krs, di page ini juga mahasiswa dapat melihat krs apa saja yang diambil.
+kedua role bisa menghapus list krs, tetapi mahasiswa hanya krs miliknya saja/yang di ambil.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![](/screenshots/krs.png)
+![](/screenshots/dosen.create.png)

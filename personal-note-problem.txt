@@ -1,7 +1,3 @@
---NOTE--
-Admin Kelola semua data
-Mahasiswa hanya lihat jadwal dan ambil KRS
-
 --PROBLEM ENCOUNTER FIX--
 everytime theres POST METHOD CANT BE USE
 use -> php artisan route:clear.
