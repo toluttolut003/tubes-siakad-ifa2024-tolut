@@ -19,8 +19,8 @@ pada page ini user bisa menginputkan akun yang terdaftar
 list akun yang terdaftar :
 #### Akun Admin
 NPM: Admin
-Password: Admin123
-#### Akun Mahasiswa
+Password: Admin123 
+#### Akun Mahasiswa (ada error untuk krs mhs)
 NPM : 5520124031
 Password : Tolut123
 
