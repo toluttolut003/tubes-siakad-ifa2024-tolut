@@ -13,13 +13,14 @@ class Krs extends Model
 
     protected $guarded = [
         'id',
-        'npm',
-        'kode_matakuliah',
         'created_at',
         'updated_at'
     ];
 
-    protected $fillable = [];
+    protected $fillable = [
+        'npm',
+        'kode_matakuliah',
+    ];
 
     public function mahasiswa(): BelongsTo
     {

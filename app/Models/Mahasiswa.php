@@ -38,4 +38,9 @@ class Mahasiswa extends Model
     {
         return $this->HasMany(Krs::class, 'nidn', 'nidn');
     }
+
+    public function user(): HasOne
+    {
+        return $this->hasOne(User::class, 'npm', 'npm');
+    }
 }

@@ -5,7 +5,7 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        <!-- Email Address -->
+        <!-- NPM -->
         <div>
             <x-input-label for="npm" :value="__('NPM')" />
             <x-text-input id="npm" class="block mt-1 w-full" type="text" name="npm" :value="old('npm')" required autofocus autocomplete="username" />

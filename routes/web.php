@@ -12,7 +12,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/dashboard', function () {
@@ -24,7 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/jadwal/index', [JadwalController::class, 'index'])->name('jadwal.index');
-    Route::get('/krs/index', [KrsController::class, 'index'])->name('krs.index');
+    
 });
 
 require __DIR__.'/auth.php';
@@ -61,6 +61,7 @@ Route::middleware('auth', 'admin')->group(function(){
     Route::delete('/matakuliah/delete/{id}', [MatakuliahController::class, 'destroy'])->name('matakuliah.destroy');
     });
 
+//  Jadwal
 Route::middleware('auth', 'admin')->group(function(){
     Route::get('/jadwal/create', [JadwalController::class, 'create'])->name('jadwal.create');
     Route::post('/jadwal/store', [JadwalController::class, 'store'])->name('jadwal.store');
@@ -69,11 +70,11 @@ Route::middleware('auth', 'admin')->group(function(){
     Route::delete('/jadwal/delete/{id}', [JadwalController::class, 'destroy'])->name('jadwal.destroy');
     });
 
-    Route::middleware('auth', 'admin')->group(function(){
+//  KRS
+Route::middleware('auth')->group(function(){
+    Route::get('/krs/index', [KrsController::class, 'index'])->name('krs.index');
     Route::get('/krs/create', [KrsController::class, 'create'])->name('krs.create');
     Route::post('/krs/store', [KrsController::class, 'store'])->name('krs.store');
-    Route::get('/krs/edit/{id}', [KrsController::class, 'edit'])->name('krs.edit');
-    Route::patch('/krs/update/{id}', [KrsController::class, 'update'])->name('krs.update');
     Route::delete('/krs/delete/{id}', [KrsController::class, 'destroy'])->name('krs.destroy');
     });
 
