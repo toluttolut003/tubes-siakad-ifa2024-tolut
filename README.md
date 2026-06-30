@@ -20,7 +20,7 @@ list akun yang terdaftar :
 #### Akun Admin
 NPM: Admin
 Password: Admin123 
-#### Akun Mahasiswa (ada error untuk krs mhs)
+#### Akun Mahasiswa (ada error untuk krs mhs pada website, tapi di localhost aman)
 NPM : 5520124031
 Password : Tolut123
 
