@@ -2,6 +2,9 @@ Nama    : Tolut
 NPM     : 5520124031
 Kelas   : IFA24
 
+# LINK WEBSITE :
+https://tolut.ifalgorithm24.web.id/krs/create
+
 # __Sistem Akademik SIAKAD__
 ### Deskripsi Singkat
 Aplikasi ini memiliki fungsi sebagai tempat untuk me-menage data rencana studi mahasiswa, mulai dari me-menage matakuliah yang bisa di ambil, dosen yang bisa di assign ke matakuliah, jadwal, juga daftar mahasiswa.
